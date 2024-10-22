@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Switch</title>
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e71212;
+    font-family: Arial, sans-serif;
+}
+
+.toggle-container {
+    position: relative;
+    
+}
+
+.toggle {
+    display: none; /* Hide the checkbox */
+}
+
+.switch {
+    width: 60px;
+    height: 34px;
+    background-color: #2d14ec;
+    border-radius: 34px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.switch:before {
+    content: "";
+    width: 26px;
+    height: 26px;
+    background-color: rgb(16, 231, 27);
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: transform 0.2s;
+}
+
+.toggle:checked + .switch {
+    background-color: #fbe200; /* Green when checked */
+}
+
+.toggle:checked + .switch:before {
+    transform: translateX(26px); /* Move the circle to the right */
+}
+
+    </style>
+</head>
+<body>
+    <div class="toggle-container">
+        <input type="checkbox" id="toggle" class="toggle">
+        <label for="toggle" class="switch"></label>
+    </div>
+</body>
+</html>
